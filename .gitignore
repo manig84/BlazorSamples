@@ -5,3 +5,4 @@
 /.vs
 /BlazorConfiguration/obj
 /BlazorConfiguration/.vs
+/BlazorConfiguration/bin/Debug/net7.0
