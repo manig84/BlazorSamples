@@ -1,0 +1,22 @@
+﻿@page "/StyleSheetRazor"
+@inject IConfiguration Configuration
+
+<h3>StyleSheetConfiguration</h3>
+
+@foreach(Styles style in StyleSheets)
+{
+    <ul>
+        <li>
+            <span>Path: </span> @style.Path
+        </li>
+    </ul>
+}
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        StyleSheets = Configuration.GetSection("adeNet:styles:add").Get<Styles[]>();
+    }
+
+}

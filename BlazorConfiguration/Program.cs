@@ -1,8 +1,15 @@
+using BlazorConfiguration;
 using BlazorConfiguration.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using BlazorConfiguration.Pages;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+// Add config file
+//builder.Configuration.AddXmlFile("appsettings.xml", optional: true, reloadOnChange: true);
+builder.Configuration.AddXmlFile("web.config", optional: true, reloadOnChange: true);
+
+//StyleSheetElementOptions options = new();
+//builder.Configuration.GetSection("adeNet:styles").Bind(options);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
